@@ -10,7 +10,7 @@ CREATE TABLE "Vote" (
 
 -- CreateTable
 CREATE TABLE "Professor" (
-    "id" INTEGER NOT NULL,
+    "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
     "imageUrl" TEXT NOT NULL,
 
