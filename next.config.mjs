@@ -13,5 +13,8 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  images: {
+    domains: ["ostad.hormozgan.ac.ir"]
+  },
 };
 export default config;

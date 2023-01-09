@@ -28,3 +28,17 @@ export const createContext = async (opts: CreateNextContextOptions) => {
 };
 
 export type Context = inferAsyncReturnType<typeof createContext>;
+
+/**
+ * 1. we define the context that is passed to your tRPC procedures. context is data
+ * that all of your tRPC pricedure will have access to, and is a great place to put things like db connections, auth info, etc.
+ * 
+ *    - `createInnerTRPCContext`: this is where you define context which doesnt depend on the request,
+ *      e.g. your db connection. you can use this function for integration testing or ssg-helpers where you dont have a request obj
+ * 
+ *    - `createTRPCContext`: this is where you define contextg which depends on the request, e.g. the user's session. you requestthe session
+ *      using the `opts.req` obj, and then pass the session down to the `createInnerTRPCContext` function to create the final context
+ * 
+ * 2. we initialize tRPC reusable procesures and middlaewares. by convention, you shouldnt export the entire `t`-object but instead,
+ * create reusable procedures and middleware and export those.
+ */

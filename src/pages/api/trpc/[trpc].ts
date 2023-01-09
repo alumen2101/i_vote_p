@@ -15,3 +15,11 @@ export default createNextApiHandler({
         }
       : undefined,
 });
+
+
+/**
+ * This is the entry point for you API and exposes the tRPC router
+ * use this to enable CORS, middleware, ...
+ * the exposed `createNextApiHandler` is a Next.js API handler which takes a request and reponse object.
+ * this means that you can wrap the `createNextApiHandler` in any middleware you want.
+ */

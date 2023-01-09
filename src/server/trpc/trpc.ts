@@ -1,3 +1,8 @@
+/**
+ * This is the entry point to setup the root configuration for tRPC on the server.
+ * - `initTRPC` should only be used once per app
+ * - we export only the functionality that we use so we can enforce which base procedures should be used
+ */
 import { initTRPC } from "@trpc/server";
 import superjson from "superjson";
 
