@@ -3,7 +3,7 @@ import { prisma } from "@/server/db/client";
 import Image from "next/image";
 import Head from "next/head";
 import type { AsyncReturnType } from "@/utils/result";
-import type { GetStaticProps } from "next";
+import type { GetServerSideProps } from "next";
 
 const getProfInOrder = async () => {
   return await prisma.professor.findMany({
@@ -93,8 +93,7 @@ const ResultsPage: React.FC<{
 
 export default ResultsPage;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const profOrdered = await getProfInOrder();
-  const DAY_IN_SECONDS = 60 * 60 * 24;
-  return { props: { professor: profOrdered }, revalidate: DAY_IN_SECONDS };
+  return { props: { professor: profOrdered } };
 };

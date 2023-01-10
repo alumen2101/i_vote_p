@@ -1,4 +1,4 @@
-const MAX_DEX_ID = 6;
+const MAX_DEX_ID = 0;
 
 export const getRandomProfDex: (notThisOne?: number) => number = (
   notThisOne
